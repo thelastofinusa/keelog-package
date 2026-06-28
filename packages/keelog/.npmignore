@@ -1,0 +1,42 @@
+# dependencies
+node_modules
+
+# tests
+test/
+*.test.*
+test-*.ts
+
+# build artifacts (if any)
+out
+dist
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+*.log
+report.*.json
+
+# dotenv
+.env
+.env.*
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# IDE / OS
+.idea
+.vscode
+.DS_Store
+
+# Config files not needed in published package
+tsconfig.json
+bun.lock
+bun.lockb
+structure.txt
+.gitignore

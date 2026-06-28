@@ -1,0 +1,17 @@
+{
+  "name": "keelog-monorepo",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "web/*"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "keelog": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

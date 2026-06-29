@@ -1,0 +1,19 @@
+# Deferred Output
+
+By default, log calls that do **not** use `.depth()` are written after a microtask. This gives you a tiny window to chain `.options()` or `.depth()` before the output appears.
+
+```ts [index.ts]
+const call = log.info("Starting process");
+// Output hasn't happened yet...
+
+call.options({ ctx: false });
+// Now it will flush with the updated options
+```
+
+Once `.depth()` is called, the log is output immediately:
+
+```ts [index.ts]
+log.info("Deep object", obj).depth(2); // writes instantly
+```
+
+If you never call `.depth()` and don’t chain any modifiers, the log will still be flushed automatically after the microtask, so no output is ever lost.

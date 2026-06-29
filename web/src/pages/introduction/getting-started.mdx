@@ -1,0 +1,66 @@
+# Getting Started [Install Keelog in your project using your favourite package manager.]
+
+::::steps
+
+### Installation
+
+:::code-group
+
+```bash [npm]
+npm install keelog
+```
+
+```bash [pnpm]
+pnpm add keelog
+```
+
+```bash [yarn]
+yarn add keelog
+```
+
+```bash [bun]
+bun add keelog
+```
+
+:::
+
+### Basic Usage
+
+```ts [index.ts]
+import { log } from "keelog";
+
+// Plain output – no prefix or context
+log("Hello, world!");
+
+// Leveled logs with automatic file/line/function context
+log.info("Server started", { port: 3000 });
+log.error("Database connection failed", { code: "ECONNREFUSED" });
+```
+
+**Terminal output (development):**
+
+```bash [terminal]
+Hello, world!
+[/app.ts:5 main] INFO Server started
+port: 3000
+[/app.ts:6 main] ERROR Database connection failed
+code: ECONNREFUSED
+```
+
+**JSON output (production):**
+
+```json [app.ts]
+{
+  "level": "log",
+  "message": "Hello, world!",
+  "ctx": { "file": "/app.ts", "func": "main", "line": 2 }
+}
+{
+  "level": "info",
+  "message": "Server started",
+  "data": { "port": 3000 },
+  "ctx": { "file": "/app.ts", "func": "main", "line": 5 }
+}
+```
+
+::::

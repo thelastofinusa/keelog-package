@@ -14,6 +14,7 @@
     },
     "packages/keelog": {
       "name": "keelog",
+      "version": "1.0.1",
       "dependencies": {
         "picocolors": "^1.1.1",
         "prettyoutput": "^1.2.0",

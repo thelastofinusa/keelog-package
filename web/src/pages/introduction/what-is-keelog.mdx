@@ -1,0 +1,15 @@
+# What is Keelog? [Learn why Keelog exists and when to use it]
+
+**Keelog** is a zero‑config console logger for Node.js and Bun that automatically captures caller context (file, function, line) without any manual setup.
+
+It provides a fluent API, beautiful tree output for objects (Unicode with syntax colours), and production‑ready JSON when `NODE_ENV=production`.
+
+## Why Keelog?
+
+- **Automatic context** – file, function, and line number are captured for every leveled log.
+- **Fluent API** – chain `.depth(n)` and `.options({ label, ctx })` on any log call.
+- **Structured by default** – objects are pretty‑printed as Unicode trees with syntax colours.
+- **Dual‑mode output** – beautiful TTY in development, formatted JSON in production.
+- **Lightweight dependencies** – `picocolors` and `prettyoutput` (both tiny and fast).
+- **Smart level filtering** via `LOG_LEVEL` environment variable.
+- **Simple default log** – `log("message")` gives a clean, prefix‑free output.

@@ -1,0 +1,35 @@
+# Modifiers – `depth()` and `options()`
+
+Every log call returns a `LogCall` object that supports two chainable modifiers.
+
+## `.depth(n: number)`
+
+Control how many levels of nested objects are displayed.  
+Default: `Infinity` (unlimited).
+
+```ts [index.ts]
+const deep = { a: { b: { c: 42 } } };
+
+log.info("Full depth", deep); // unlimited
+log.info("Limited depth", deep).depth(2); // stops at 2 levels
+```
+
+## `.options({ label?, ctx? })`
+
+Toggle the visibility of the level label and/or the file/line context.
+
+Both default to `true` for leveled logs, and `false` for the plain `log()` method.
+
+```ts [index.ts]
+log.info("No context").options({ ctx: false });
+log.warn("No label").options({ label: false });
+log.error("Bare minimum").options({ label: false, ctx: false });
+```
+
+## Chaining
+
+Modifiers can be chained in any order, but `.depth()` triggers immediate output, so it should usually be the **last** call in the chain.
+
+```ts [index.ts]
+log.info("Data", obj).options({ ctx: false }).depth(3);
+```

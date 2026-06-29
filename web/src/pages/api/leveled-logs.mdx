@@ -1,0 +1,40 @@
+# Leveled Logs – `debug`, `info`, `warn`, `error`
+
+These methods respect the `LOG_LEVEL` environment variable and automatically include the **level label** and **caller context** (file, function, line).
+
+## Methods
+
+- `log.debug(message?, data?)`
+- `log.info(message?, data?)`
+- `log.warn(message?, data?)`
+- `log.error(message?, data?)`
+
+Each accepts the same argument patterns:
+
+```ts [index.ts]
+log.info("User fetched", { id: 42 }); // message + data
+log.warn({ diskUsage: "90%" }); // data only
+log.error(); // level + context only
+```
+
+## Context
+
+The prefix `[/path/file.ts:line funcName]` is automatically added to every leveled log:
+
+```ts [index.ts]
+// Inside a function named "processTask"
+log.debug("Processing", { taskId });
+```
+
+```bash [terminal]
+[/src/tasks.ts:2 processTask] DEBUG Processing
+├─ taskId: abc-123
+```
+
+## Log Levels
+
+Log levels follow a hierarchy (`debug` < `info` < `warn` < `error`). The default minimum level is `info` – debug logs are hidden unless you set `LOG_LEVEL=debug`.
+
+```bash [terminal]
+LOG_LEVEL=debug bun run app.ts
+```

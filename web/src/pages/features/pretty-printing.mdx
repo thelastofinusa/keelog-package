@@ -1,0 +1,31 @@
+# Pretty-Printing with Unicode Trees
+
+Objects passed to any log method are rendered using `prettyoutput`, which produces **Unicode box‑drawing trees** with syntax highlighting.
+
+```ts [index.ts]
+log.info("User data", {
+  name: "Alice",
+  role: "admin",
+  permissions: { read: true, write: false },
+});
+```
+
+**Output:**
+
+```bash [terminal]
+[/app.ts:1 main] INFO User data
+├─ name: Alice
+├─ role: admin
+└─ permissions
+   ├─ read: true
+   └─ write: false
+```
+
+## Syntax Colours
+
+- Strings – yellow
+- Numbers – cyan
+- Booleans – magenta
+- Null / Undefined – grey
+
+Use `.depth(n)` to limit the tree expansion for deeply nested data.

@@ -1,0 +1,24 @@
+# Automatic Context Extraction
+
+Keelog uses the **V8 stack trace API** to determine the caller’s file, function name, and line number – **no manual setup required**.
+
+```ts [actions/fetchUser.ts]
+function fetchUser(id: number) {
+  log.info("Fetching user", { id });
+}
+```
+
+```bash
+[/src/api.ts:2 fetchUser] INFO Fetching user
+├─ id: 42
+```
+
+## How it works
+
+When a leveled log is called, Keelog creates a new `Error` object and captures its structured stack trace. It then walks the frames, skipping any that originate from the logger’s own source files, and uses the first “outside” frame as the context.
+
+## Why this matters
+
+- No need to create child loggers or pass component names.
+- Debug messages instantly tell you **where** they came from.
+- Works equally well in plain functions, class methods, and async operations.

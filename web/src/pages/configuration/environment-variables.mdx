@@ -1,0 +1,34 @@
+# Environment Variables
+
+## `LOG_LEVEL`
+
+Set the minimum log level for the leveled methods (`debug`, `info`, `warn`, `error`).  
+The plain `log()` function always prints, regardless of this value.
+
+Valid values: `debug`, `info`, `warn`, `error`  
+Default: `info`
+
+```bash [terminal]
+LOG_LEVEL=debug bun run app.ts
+```
+
+When set to `warn`, only warnings and errors are shown.
+
+## `NODE_ENV`
+
+When `NODE_ENV` is set to `production`, Keelog switches from colourful TTY output to **formatted JSON** suitable for log aggregators.
+
+```bash [terminal]
+NODE_ENV=production node app.js
+```
+
+Production output example:
+
+```json [index.json]
+{
+  "level": "info",
+  "message": "Server started",
+  "data": { "port": 3000 },
+  "ctx": { "file": "/app.ts", "func": "main", "line": 5 }
+}
+```

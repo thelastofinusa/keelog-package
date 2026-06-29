@@ -1,0 +1,36 @@
+# Simple Log – `log()`
+
+The `log()` method gives you a **label‑less, context‑free** output that always prints, regardless of `LOG_LEVEL`.
+
+## Signature
+
+```ts [index.ts]
+log(message?: string, data?: any)
+```
+
+### Examples
+
+```ts [index.ts]
+// Plain text
+log("Hello, world!");
+
+// Text + object tree
+log("User data", { id: 1, name: "Ada" });
+
+// Object only (no message)
+log({ id: 1, name: "Ada" });
+
+// Empty line
+log();
+```
+
+## Chaining
+
+`log()` returns the same fluent `LogCall` object, so you can chain modifiers:
+
+```ts [index.ts]
+log("Complex data", deepObj).depth(2);
+log("Just data", obj).options({ ctx: true }); // optionally show context
+```
+
+When no `.depth()` is called, output happens after a microtask. Calling `.depth()` flushes immediately.

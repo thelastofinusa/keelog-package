@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/keelog"><img src="https://img.shields.io/npm/v/keelog.svg" alt="npm version" /></a>
-  <a href="https://github.com/thelastofinusa/keelog-package/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thelastofinusa/keelog" alt="License" /></a>
+  <a href="https://github.com/thelastofinusa/keelog-package/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thelastofinusa/keelog-package" alt="License" /></a>
 </p>
 
 ### Why keelog?

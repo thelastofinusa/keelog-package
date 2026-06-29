@@ -1,14 +1,14 @@
-# Contributing to Keelog
+## Contributing to Keelog
 
 Welcome! 🎉 Thank you for your interest in contributing to Keelog.  
 This guide will help you set up the project, make changes, and submit a pull request.
 
-## Prerequisites
+### Prerequisites
 
 - [Bun](https://bun.com) (v1.3 or later) – we use it as the runtime, package manager, and test runner.
 - Git
 
-## Project Structure
+### Project Structure
 
 This is a **Bun monorepo** with workspaces:
 
@@ -21,7 +21,7 @@ keelog-monorepo/
 └── CONTRIBUTING.md      # You are here
 ```
 
-## Setting Up Locally
+### Setting Up Locally
 
 ```bash
 # Clone the repository
@@ -32,7 +32,7 @@ cd keelog-package
 bun install
 ```
 
-## Developing the Keelog Package
+### Developing the Keelog Package
 
 All source code lives in `packages/keelog/src/lib/`.
 
@@ -55,7 +55,7 @@ All source code lives in `packages/keelog/src/lib/`.
   bun run -- tsc --noEmit
   ```
 
-## Developing the Documentation
+### Developing the Documentation
 
 The docs use [Vocs](https://vocs.dev). Start the dev server:
 
@@ -66,14 +66,14 @@ bun run dev
 
 Pages are in `web/src/pages/`. Configuration is in `web/vocs.config.ts`.
 
-## Coding Guidelines
+### Coding Guidelines
 
 - **TypeScript** – all code is typed. Use strict mode (already enabled).
 - **File organisation** – each module has a clear responsibility (context, formatting, logger, log-call, types).
 - **No unused dependencies** – keep the package lean.
 - **Formatting** – run `bun run fmt` (if we add a script) or manually keep code clean.
 
-## Running Tests
+### Running Tests
 
 We have a comprehensive test file that covers all features:
 
@@ -84,7 +84,7 @@ bun run src/test/test-api.ts
 
 Add new test cases there when you introduce features or fix bugs.
 
-## Submitting Changes
+### Submitting Changes
 
 1. **Fork** the repository and create a new branch from `main`.
 2. Make your changes in the relevant package.
@@ -95,7 +95,7 @@ Add new test cases there when you introduce features or fix bugs.
    - Describe what you changed and why.
    - Reference any related issues.
 
-## Licence
+### Licence
 
 By contributing, you agree that your contributions will be licensed under the [MIT License](LICENSE).
 

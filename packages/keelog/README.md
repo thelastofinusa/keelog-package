@@ -1,15 +1,15 @@
 <p align="center" style="margin-top: 30px;">
-  <img src="https://pushai.vercel.app/logo.png" alt="PushAI logo" width="64" height="64" />
+  <img src="https://keelog.vercel.app/icon-dark.svg" alt="Keelog logo" width="64" height="64" />
 </p>
 
 <h1 align="center">keelog</h1>
 
 <p align="center">
-  A zero-config console logger with automatic context, <br /> clean tree output, and production-ready JSON.
+  A lightweight zero-config console logger with automatic context, <br /> clean tree output, and production-ready JSON.
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/pushai"><img src="https://img.shields.io/npm/v/keelog.svg" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/keelog"><img src="https://img.shields.io/npm/v/keelog.svg" alt="npm version" /></a>
   <a href="https://github.com/thelastofinusa/keelog-package/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thelastofinusa/keelog" alt="License" /></a>
 </p>
 

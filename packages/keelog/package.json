@@ -1,7 +1,7 @@
 {
   "name": "keelog",
-  "version": "1.0.1",
-  "description": "A zero-config console logger with automatic context, clean tree output, and production-ready JSON.",
+  "version": "1.0.2",
+  "description": "A lightweight zero-config console logger with automatic context, clean tree output, and production-ready JSON.",
   "license": "MIT",
   "type": "module",
   "main": "./src/index.ts",
@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/thelastofinusa/keelog-package/issues"
   },
-  "homepage": "https://github.com/thelastofinusa/keelog-package/tree/main/packages/keelog#readme",
+  "homepage": "https://keelog.vercel.app",
   "keywords": [
     "logger",
     "console",

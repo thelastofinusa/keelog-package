@@ -1,6 +1,6 @@
 {
   "name": "keelog",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A lightweight zero-config console logger with automatic context, clean tree output, and production-ready JSON.",
   "license": "MIT",
   "type": "module",

@@ -1,5 +1,9 @@
 <p align="center" style="margin-top: 30px;">
-  <img src="https://keelog.vercel.app/icon-dark.svg" alt="Keelog logo" width="64" height="64" />
+  <picture>
+    <source srcset="https://keelog.vercel.app/icon-dark.svg" media="(prefers-color-scheme: dark)" alt="Keelog logo" width="64" height="64" />
+    <source srcset="https://keelog.vercel.app/icon-light.svg" media="(prefers-color-scheme: light)" alt="Keelog logo" width="64" height="64" />
+    <img src="https://keelog.vercel.app/icon-dark.svg" alt="Keelog logo" width="64" height="64" />
+  </picture>
 </p>
 
 <h1 align="center">keelog</h1>
